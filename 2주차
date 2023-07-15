@@ -5,4 +5,23 @@ Node.js
   제목, 목록, 링크를 만들고자 할때 HTML에 따라 호출함으로서 WEB Application을 만들듯이 Node.js도 마찬가지임
   Node.js runtime을 이용하여 Node.js Application을 만들것
 설치
-  node.js와 atom을 이용하기에 두개를 설치한다.
+- node.js와 atom을 이용하기에 두개를 설치한다.
+Node.js를 활용한 웹서버 만들기
+/*
+var http = require('http');
+var fs = require('fs');
+var app = http.createServer(function(request,response){
+    var url = request.url;
+    if(request.url == '/'){
+      url = '/index.html';
+    }
+    if(request.url == '/favicon.ico'){
+      return response.writeHead(404);
+    }
+    response.writeHead(200);
+    console.log(__dirname + url);
+    response.end(fs.readFileSync(__dirname + url));
+
+});
+app.listen(3000);
+*/
