@@ -45,3 +45,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
  
 console.log(letter);
 */
+
+
+URL
+- query 주소의 시작은 ?로 약속, 값과 값은 &로 구분. 값의 이름과 값은 = 로 구분하기 약속함.
