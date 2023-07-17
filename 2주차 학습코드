@@ -75,3 +75,10 @@ var app = http.createServer(function(request,response){
 
 });
 app.listen(3000);
+
+Node.js 파일 읽기
+var fs = require('fs');
+fs.readFile('sample.txt', 'utf8', function(err, data){
+  console.log(data);
+});
+// nodejs 공식 홈페이지에서 문서로 들어간 후 버전 들어간 후 다음에 모듈에서 File System 누르면 관련된걸 다 볼 수 있음.
