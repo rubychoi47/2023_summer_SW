@@ -4,54 +4,30 @@ Node.js
 - WEB Browser 위에서 돌아가는 WEB Application을 생성할거임
   제목, 목록, 링크를 만들고자 할때 HTML에 따라 호출함으로서 WEB Application을 만들듯이 Node.js도 마찬가지임
   Node.js runtime을 이용하여 Node.js Application을 만들것
+
 설치
 - node.js와 atom을 이용하기에 두개를 설치한다.
-Node.js를 활용한 웹서버 만들기
-/*
-var http = require('http');
-var fs = require('fs');
-var app = http.createServer(function(request,response){
-    var url = request.url;
-    if(request.url == '/'){
-      url = '/index.html';
-    }
-    if(request.url == '/favicon.ico'){
-      return response.writeHead(404);
-    }
-    response.writeHead(200);
-    console.log(__dirname + url);
-    response.end(fs.readFileSync(__dirname + url));
-});
-app.listen(3000);
-/*
+
 변수활용
 - 가독성을 높일 수 있다.
-/*
-var name = 'ruby';
-var letter = 'Dear '+name+' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '+name+' Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa egoing qui officia deserunt mollit anim id est laborum. '+name;
-console.log(letter);
-*/
+
 Template Literal
 \n ; 줄바꿈
-/*
-var name = 'k8805';
-// String literals
-var letter = 'Dear '+name+'\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '+name+' Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa egoing qui officia deserunt mollit anim id est laborum. '+name;
- 
-// Template literals
-var letter = `Dear ${name}
- 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ${name} Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ${1+1} Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa egoing qui officia deserunt mollit anim id est laborum. ${name}`;
- 
-console.log(letter);
-*/
-
 
 URL
 - query 주소의 시작은 ?로 약속, 값과 값은 &로 구분. 값의 이름과 값은 = 로 구분하기 약속함.
 
-
 APP 제작
 파일을 이용해서 본문을 구현할때 각각의 파일의 내용만 수정이 되는거라면 node main.js를 다시 할 필요가 없음.
 
+callback
+- 파일을 읽은 다음에 나중에 함수를 호출하는 것을 통해 실행
 
+PM2
+- 파일이 수정되면 자동으로 프로그램을 껐다가 켜서 명령어르 실행하지 않아도 됨.
+npm install pm2 -g // 설치
+
+pm2 start main.js --watch
+pm2 moint
+pm2 list
+pm2 log //에러 & 수정된거 확
