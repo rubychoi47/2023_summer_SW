@@ -30,4 +30,4 @@ npm install pm2 -g // 설치
 pm2 start main.js --watch
 pm2 moint
 pm2 list
-pm2 log //에러 & 수정된거 확
+pm2 log //에러 & 수정된거 확인
