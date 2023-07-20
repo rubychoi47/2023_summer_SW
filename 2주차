@@ -31,3 +31,6 @@ pm2 start main.js --watch
 pm2 moint
 pm2 list
 pm2 log //에러 & 수정된거 확인
+
+<소감>
+Node.js를 공부하면서 기존의 js와 비슷하면서도 다른 듯하여 기초부터 잘 다져야 응용하는데 어려움이 없을 것 같다는 생각이 들었다.
